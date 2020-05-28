@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_181354) do
+ActiveRecord::Schema.define(version: 2020_05_28_201618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,14 @@ ActiveRecord::Schema.define(version: 2020_05_28_181354) do
     t.string "title"
     t.string "type"
     t.string "ulr_source"
-    t.integer "votes_count"
+    t.integer "votes_count", default: 0
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "owner_id", null: false
+    t.integer "comments_count", default: 0
     t.index ["category_id"], name: "index_memes_on_category_id"
+    t.index ["owner_id"], name: "index_memes_on_owner_id"
   end
 
   create_table "memes_tags", id: false, force: :cascade do |t|
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_181354) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.integer "memes_count"
+    t.integer "memes_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -69,4 +72,5 @@ ActiveRecord::Schema.define(version: 2020_05_28_181354) do
   add_foreign_key "comments", "memes"
   add_foreign_key "comments", "users"
   add_foreign_key "memes", "categories"
+  add_foreign_key "memes", "users", column: "owner_id"
 end
