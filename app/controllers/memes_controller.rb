@@ -27,7 +27,7 @@ class MemesController < ApplicationController
     @meme = Meme.new(meme_params)
 
     respond_to do |format|
-      @meme.owner = User.first
+      @meme.owner = current_user
       if @meme.save
         format.html { redirect_to :action => 'index' }
       else
