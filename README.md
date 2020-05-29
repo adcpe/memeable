@@ -9,3 +9,12 @@
 ## ERD
 
 ![](erd.png)
+
+## Working Paths
+
+```
+/
+/my_profile
+/users/sign_in
+/users/sign_up
+```
