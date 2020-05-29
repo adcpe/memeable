@@ -4,7 +4,7 @@ class MemesController < ApplicationController
   # GET /memes
   # GET /memes.json
   def index
-    @memes = Meme.all
+    @data = Meme.all.group_by{ |user| user.created_at.to_date }
   end
 
   # GET /memes/1
@@ -27,9 +27,9 @@ class MemesController < ApplicationController
     @meme = Meme.new(meme_params)
 
     respond_to do |format|
+      @meme.owner = User.first
       if @meme.save
-        format.html { redirect_to @meme, notice: 'Meme was successfully created.' }
-        format.json { render :show, status: :created, location: @meme }
+        format.html { redirect_to :action => 'index' }
       else
         format.html { render :new }
         format.json { render json: @meme.errors, status: :unprocessable_entity }
