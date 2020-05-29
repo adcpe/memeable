@@ -16,8 +16,18 @@
   <%= @meme.votes_count %>
 </p>
 
+<% if current_user %>
+<% else %>
+  <p>Login to add a vote!</p>
+<% end %>
+
 <p>
   <strong>Comments:</strong>
+  <% if current_user %>
+    <%= render 'comments/form', locals: { meme_id: @meme.id } %>
+  <% else %>
+    <p>Login to add a comment!</p>
+  <% end %>
   <% @meme.comments.each do |comment| %>
     <p><%= comment.body %></p>
   <% end %>
