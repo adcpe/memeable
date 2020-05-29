@@ -1,11 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%if user_signed_in?%>
-  <%=link_to "My Profile", "/my_profile"%>
-  <%=link_to "Log Out", destroy_user_session_path, method: :delete%>
-<%else%>
-  <%=link_to "Sign In", new_user_session_path%>
-<%end%>
-
 <h1>
   <%= @meme.title %>
 </h1>

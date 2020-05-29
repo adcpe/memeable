@@ -7,6 +7,10 @@ class MemesController < ApplicationController
     @data = Meme.all.group_by{ |user| user.created_at.to_date }
   end
 
+  def popular
+    @data = Meme.order(votes_count: :desc)
+  end
+
   # GET /memes/1
   # GET /memes/1.json
   def show
