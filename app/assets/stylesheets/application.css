@@ -20,3 +20,8 @@
 * {
   font-family: 'Lilita One', cursive;
 }
+
+a:hover {
+  color: #000;
+  background: none;
+}
