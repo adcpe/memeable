@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_29_023836) do
   create_table "memes", force: :cascade do |t|
     t.string "title"
     t.string "type"
-    t.string "ulr_source"
+    t.string "url_source"
     t.integer "votes_count", default: 0
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
