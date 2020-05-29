@@ -1,3 +1,21 @@
 // Place all the styles related to the Memes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.comments {
+  margin-top: 40px;
+
+  div {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px auto 5px;
+  }
+
+  p {
+    margin: 5px;
+  }
+}
+
+.comments__username {
+  font-weight: bold;
+  color: #78cfba;
+}
