@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<%if user_signed_in?%>
+  <%=link_to "My Profile", "/my_profile"%>
+  <%=link_to "Log Out", destroy_user_session_path, method: :delete%>
+<%else%>
+  <%=link_to "Sign In", new_user_session_path%>
+<%end%>
 
 <h1>
   <%= @meme.title %>
@@ -13,10 +19,15 @@
 
 <p>
   <strong>Votes:</strong>
-  <%= @meme.votes_count %>
+  <%= @meme.votes.count %>
 </p>
 
 <% if current_user %>
+  <% if vote = Vote.find_by(user: current_user, meme: @meme) %>
+    <%= render '/votes/form_update', locals: { meme_id: @meme.id } %>
+  <% else %>
+    <%= render '/votes/form_new', locals: { meme_id: @meme.id } %>
+  <% end %>
 <% else %>
   <p>Login to add a vote!</p>
 <% end %>
@@ -24,7 +35,7 @@
 <p>
   <strong>Comments:</strong>
   <% if current_user %>
-    <%= render 'comments/form', locals: { meme_id: @meme.id } %>
+    <%= render '/comments/form', locals: { meme_id: @meme.id } %>
   <% else %>
     <p>Login to add a comment!</p>
   <% end %>
