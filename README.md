@@ -15,7 +15,7 @@ Password: 123456
 /users/sign_up
 ```
 
-## Group members
+## GroupMembers.sort.reverse
 
 - Zamir Narro
 - Joel Eche
