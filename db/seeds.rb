@@ -33,7 +33,7 @@ memes = [
     url_source: "https://www.siliconrepublic.com/wp-content/uploads/2015/05/Project-completeness-over-time.png",
     votes_count: rand(1..10),
     category_id: 1,
-    tags: %w(time funny developes work),
+    tags: %w(time funny developers work),
   },
   {
     title: "Bug",
@@ -41,7 +41,7 @@ memes = [
     url_source: "https://www.siliconrepublic.com/wp-content/uploads/2015/05/Bug-v-feature.jpg",
     votes_count: rand(1..10),
     category_id: 1,
-    tags: %w(bugs funny developes),
+    tags: %w(bugs funny developers),
   },
   {
     title: "Genders",
@@ -49,7 +49,7 @@ memes = [
     url_source: "https://www.siliconrepublic.com/wp-content/uploads/2015/05/Female-Male-Programmer.png",
     votes_count: rand(1..10),
     category_id: 1,
-    tags: %w(gender developes),
+    tags: %w(gender developers),
   },
   {
     title: "Developer on the wild",
@@ -57,7 +57,7 @@ memes = [
     url_source: "https://www.siliconrepublic.com/wp-content/uploads/2015/05/Tigers.png",
     votes_count: rand(1..10),
     category_id: 1,
-    tags: %w(lion developes clients managers),
+    tags: %w(lion developers clients managers),
   },
   {
     title: "Terminal programmer",
@@ -65,7 +65,7 @@ memes = [
     url_source: "https://media.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif",
     votes_count: rand(1..10),
     category_id: 1,
-    tags: %w(terminal shell developes),
+    tags: %w(terminal shell developers),
   },
   {
     title: "Chemistry Cat",
