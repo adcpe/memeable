@@ -4,7 +4,7 @@ class MemesController < ApplicationController
   # GET /memes
   # GET /memes.json
   def index
-    @data = Meme.all.group_by{ |user| user.created_at.to_date }
+    @data = Meme.all.group_by{ |user| user.created_at.to_date }.sort.reverse
   end
 
   def popular
