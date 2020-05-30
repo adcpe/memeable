@@ -4,10 +4,11 @@
 .comments {
   margin-top: 40px;
 
-  div {
+  .comment {
+    margin: 5px auto 5px;
+    padding: 5px;
     border: 1px solid black;
     border-radius: 5px;
-    margin: 5px auto 5px;
   }
 
   p {
@@ -18,4 +19,40 @@
 .comments__username {
   font-weight: bold;
   color: #78cfba;
+}
+
+.grid-memes {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  row-gap: 30px;
+}
+
+.form-memes {
+  padding-left: 15px;
+}
+
+.meme-item {
+  max-width: 220px;
+  height: 220px;
+  border: 1px solid black;
+  background: #EFF2F1;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.meme-detail {
+  img {
+    max-height: 360px
+  }
+}
+.comment-form {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 5px auto 5px;
+  border: 1px solid black;
+  resize: vertical;
+}
+.vote-message {
+  width: 44px;
 }

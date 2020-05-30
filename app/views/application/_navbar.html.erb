@@ -1,31 +1,38 @@
-<nav class="flex">
-  <a href="/"><%= image_tag "memeable.svg" %></a>
-
-  <div>
-    <ul class="flex nav-list">
-      <li><a href="/categories">By Category</a></li>
-      <li><a href="/popular">By Popularity</a></li>
-      <li><a>Search</a></li>
-      <li><a href="/memes/new">Create Meme</a></li>
-    </ul>
-  </div>
-
-  <div>
-    <ul class="flex nav-list">
-      <% if user_signed_in? %>
-        <li>
-          <%= link_to "My Profile", "/my_profile" %>
+<header class="container">
+  <nav class="flex justify-space-between nav-header">
+    <div class="flex">
+      <a href="/" class="nav-brand"><%= image_tag "memeable.svg" %></a>
+      <ul class="flex nav-list">
+        <li class="flex align-items-center">
+          <a href="/categories">By Category</a>
         </li>
-        <li>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        <li class="flex align-items-center">
+          <a href="/popular">By Popularity</a>
         </li>
-      <% else %>
-        <li>
-          <%= link_to "Sign In", new_user_session_path %>
+        <li class="flex align-items-center">
+          <a>Search</a>
         </li>
-      <% end %>
-    </ul>
-  </div>
-</nav>
+        <li class="flex align-items-center">
+          <a href="/memes/new">Create Meme</a>
+        </li>
+      </ul>
+    </div>
 
-<hr>
+    <div class="flex">
+      <ul class="flex nav-list">
+        <% if user_signed_in? %>
+          <li class="flex align-items-center">
+            <%= link_to "My Profile", "/my_profile" %>
+          </li>
+          <li class="flex align-items-center">
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="flex align-items-center">
+            <%= link_to "Sign In", new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

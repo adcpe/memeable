@@ -1,10 +1,12 @@
-<% @memes_by_categ.each do |category, memes| %>
-  <h1><%= category %></h1>
-  <div>
-    <% memes.each do |meme| %>
-      <a href="/memes/<%= meme.id %>">
-        <img src="<%= meme.url_source %>" alt="<%= meme.title %>" width="220">
-      </a>
-    <% end %>
-  </div>
-<% end %>
+<div class="container">
+  <% @memes_by_categ.each do |category, memes| %>
+    <h1><%= category %></h1>
+    <div class="grid-memes">
+      <% memes.each do |meme| %>
+        <a href="/memes/<%= meme.id %>" class="meme-item flex align-items-center justify-center">
+          <img src="<%= meme.url_source %>" alt="<%= meme.title %>">
+        </a>
+      <% end %>
+    </div>
+  <% end %>
+</div>

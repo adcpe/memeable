@@ -1,32 +1,47 @@
-<p id="notice"><%= notice %></p>
-
-<main>
+<div class="container flex justify-center flex-column align-items-center meme-detail">
   <h1>
     <%= @meme.title %>
   </h1>
 
-  <img src="<%= @meme.url_source %>" alt="<%= @meme.title %>" width="220">
+  <img src="<%= @meme.url_source %>" alt="<%= @meme.title %>">
 
-  <p>
-    <strong>Category:</strong>
-    <%= @meme.category.name %>
-  </p>
+  <div class="flex justify-space-between w-100-percent max-w-440">
+    <div class="flex align-items-center">
+      <p>
+        <strong>Category:</strong>
+        <span class="tag-grey"><%= @meme.category.name %></span>
+      </p>
+    </div>
+    <div class="flex align-items-center">
+      <p>
+        <strong>Votes:</strong>
+        <span class="tag-grey"><%= @meme.votes.count %></span>
+      </p>
+      <% if current_user %>
+        <% if vote = Vote.find_by(user: current_user, meme: @meme) %>
+          <%= render '/votes/form_update', locals: { meme_id: @meme.id } %>
+        <% else %>
+          <%= render '/votes/form_new', locals: { meme_id: @meme.id } %>
+        <% end %>
+      <% else %>
+        <p class="require-login vote-message">Login to vote!</p>
+      <% end %>
+    </div>
+  </div>
 
-  <p>
-    <strong>Votes:</strong>
-    <%= @meme.votes_count %>
-  </p>
-
-  <section class="comments">
+  <div class="comments max-w-440 w-100-percent">
     <h1>Comments:</h1>
-
+    <% if current_user %>
+      <%= render '/comments/form', locals: { meme_id: @meme.id } %>
+    <% else %>
+      <p class="require-login">Login to add a comment!</p>
+      <br>
+    <% end %>
     <% @meme.comments.each do |comment| %>
-      <div>
+      <div class="comment">
         <p><span class="comments__username"><%= comment.user.username %></span></p>
         <p><%= comment.body %></p>
       </div>
     <% end %>
-  </section>
-</main>
-
-
+  </div>
+</div>

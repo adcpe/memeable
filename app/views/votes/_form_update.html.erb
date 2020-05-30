@@ -1,4 +1,4 @@
 <%= form_with(url: "/votes/unvote", method: "post") do %>
   <%= hidden_field_tag(:meme_id, locals[:meme_id]) %>
-  <%= submit_tag("Unvote") %>
+  <%= submit_tag("Unvote", class: 'btn-submit') %>
 <% end %>

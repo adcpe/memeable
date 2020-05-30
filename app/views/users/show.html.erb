@@ -1,26 +1,21 @@
-<p id="notice"><%= notice %></p>
+<main class="container w-30-percent-lg flex flex-column">
 
-<main class="user">
-
-  <h1>My account</h1>
+  <h1 class="title">My account</h1>
 
   <div class="user__info">
-    <p>
-      <strong>Username:</strong>
-      <%= @user.username %>
+    <p class="mb-30">
+      Username: <%= @user.username %>
     </p>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
+    <p class="mb-30">
+      Email: <%= @user.email %>
     </p>
 
-    <p>
-      <strong># of memes:</strong>
-      <%= @user.memes_count %>
+    <p class="mb-30">
+      # of memes: <%= @user.memes_count %>
     </p>
 
-    <%= link_to 'Edit', edit_user_registration_path %>
+    <%= link_to 'Edit', edit_user_registration_path, class: 'btn-submit text-undecorated edit-profile' %>
   </div>
 
 </main>
