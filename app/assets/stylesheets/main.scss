@@ -94,13 +94,22 @@ select {
   background-color: #ff9854;
   color: white;
 }
-.tag-grey {
+%tag {
   padding: 5px 10px;
   margin-right: 5px;
   border-radius: 10px;
-  background: #181F33;
   color: white;
 }
+
+.tag-grey {
+  @extend %tag;
+  background: #181F33;
+}
+.tag-green {
+  @extend %tag;
+  background: #78CFBA;
+}
+
 
 .w-100-percent {
   width: 100%;
