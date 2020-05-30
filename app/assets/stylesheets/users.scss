@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.user * {
-  font-family: 'Lilita One', cursive;
-  font-size: 24px;
-  font-weight: bold;
-}
-
 .user a {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -18,5 +12,20 @@
 }
 
 .user__info {
-  padding-left: 10px;
+  padding-left: 15px;
+  p {
+    font-family: 'Lilita One', cursive;
+    font-weight: normal;
+    font-size: 24px;
+  }
+}
+
+.form-user {
+  padding-left: 15px;
+}
+
+.edit-profile {
+  padding: 8px 14px 8px 14px;
+  font-size: 16px;
+  line-height: 18px;
 }

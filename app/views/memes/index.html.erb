@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
+<div class="container">
 <% @data.each do |key, memes| %>
   <h1><%= key.strftime('%A, %B %-d') %></h1>
-  <div>
-  <% memes.each do |meme| %>
-    <a href="/memes/<%=meme.id%>">
-      <img src="<%= meme.url_source %>" alt="<%= meme.title %>" width="220">
-    </a>
-  <% end %>
+  <div class="grid-memes">
+    <% memes.each do |meme| %>
+      <a href="/memes/<%=meme.id%>" class="meme-item flex align-items-center justify-center">
+          <img src="<%= meme.url_source %>" alt="<%= meme.title %>">
+      </a>
+    <% end %>
   </div>
+  <br>
 <% end %>
-<br>
-
-<%#= link_to 'New Meme', new_meme_path %>
+</div>

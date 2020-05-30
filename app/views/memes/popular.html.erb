@@ -1,13 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Most popular memes</h1>
-<div>
-  <% @data.each do |meme| %>
-    <a href="/memes/<%=meme.id%>">
-      <img src="<%= meme.url_source %>" alt="<%= meme.title %>" width="220">
-    </a>
-  <% end %>
+<div class="container">
+  <h1>Most popular memes</h1>
+  <div class="grid-memes">
+    <% @data.each do |meme| %>
+      <a href="/memes/<%=meme.id%>" class="meme-item flex align-items-center justify-center">
+        <img src="<%= meme.url_source %>" alt="<%= meme.title %>">
+      </a>
+    <% end %>
+  </div>
 </div>
-<br>
-
-<%= link_to 'New Meme', new_meme_path %>
