@@ -1,10 +1,10 @@
-# README
+# MEMEABLE
 
-## Group members
+## Testing credentials
 
-- Zamir Narro
-- Joel Eche
-- Andrés Del Carpio
+Email: test@mail.com
+
+Password: 123456
 
 ## Working Paths
 
@@ -14,3 +14,9 @@
 /users/sign_in
 /users/sign_up
 ```
+
+## Group members
+
+- Zamir Narro
+- Joel Eche
+- Andrés Del Carpio
