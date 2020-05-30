@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<main class="user">
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <h1>My account</h1>
 
-<p>
-  <strong>Memes count:</strong>
-  <%= @user.memes_count %>
-</p>
+  <div class="user__info">
+    <p>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </p>
 
-<%= link_to 'Back to Home Page', root_path %>
-<%#= link_to 'Back', users_path %>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
+
+    <p>
+      <strong># of memes:</strong>
+      <%= @user.memes_count %>
+    </p>
+
+    <%= link_to 'Edit', edit_user_registration_path %>
+  </div>
+
+</main>

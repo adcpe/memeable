@@ -1,15 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<% @data.each do |key, memes| %>
-  <h1><%= key %></h1>
-  <div>
-  <% memes.each do |meme| %>
+<h1>Most popular memes</h1>
+<div>
+  <% @data.each do |meme| %>
     <a href="/memes/<%=meme.id%>">
       <img src="<%= meme.url_source %>" alt="<%= meme.title %>" width="220">
     </a>
   <% end %>
-  </div>
-<% end %>
+</div>
 <br>
 
-<%#= link_to 'New Meme', new_meme_path %>
+<%= link_to 'New Meme', new_meme_path %>

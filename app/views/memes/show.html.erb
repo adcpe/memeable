@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>
-  <%= @meme.title %>
-</h1>
+<main>
+  <h1>
+    <%= @meme.title %>
+  </h1>
 
-<img src="<%= @meme.url_source %>" alt="<%= @meme.title %>" width="220">
+  <img src="<%= @meme.url_source %>" alt="<%= @meme.title %>" width="220">
 
-<p>
-  <strong>Category:</strong>
-  <%= @meme.category.name %>
-</p>
+  <p>
+    <strong>Category:</strong>
+    <%= @meme.category.name %>
+  </p>
 
-<p>
-  <strong>Votes:</strong>
-  <%= @meme.votes_count %>
-</p>
+  <p>
+    <strong>Votes:</strong>
+    <%= @meme.votes_count %>
+  </p>
 
-<p>
-  <strong>Comments:</strong>
-  <% @meme.comments.each do |comment| %>
-    <p><%= comment.body %></p>
-  <% end %>
-</p>
+  <section class="comments">
+    <h1>Comments:</h1>
+
+    <% @meme.comments.each do |comment| %>
+      <div>
+        <p><span class="comments__username"><%= comment.user.username %></span></p>
+        <p><%= comment.body %></p>
+      </div>
+    <% end %>
+  </section>
+</main>
+
+

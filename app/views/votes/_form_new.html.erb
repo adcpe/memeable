@@ -1,0 +1,4 @@
+<%= form_with(url: "/votes/new", method: "post") do %>
+  <%= hidden_field_tag(:meme_id, locals[:meme_id]) %>
+  <%= submit_tag("Vote") %>
+<% end %>
