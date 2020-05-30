@@ -11,8 +11,14 @@ Password: 123456
 ```
 /
 /my_profile
+/users/edit
 /users/sign_in
 /users/sign_up
+/users/sign_out
+/memes/[:id]
+/memes/new
+/categories
+/popular
 ```
 
 ## GroupMembers.sort.reverse
