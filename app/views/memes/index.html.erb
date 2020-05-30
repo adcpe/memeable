@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% @data.each do |key, memes| %>
-  <h1><%= key %></h1>
+  <h1><%= key.strftime('%A, %B %-d') %></h1>
   <div>
   <% memes.each do |meme| %>
     <a href="/memes/<%=meme.id%>">
