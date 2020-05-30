@@ -1,6 +1,10 @@
-<% @meme_categ.each do |category, memes| %>
+<% @memes_by_categ.each do |category, memes| %>
   <h1><%= category %></h1>
   <div>
-    <% memes.each do || %>
+    <% memes.each do |meme| %>
+      <a href="/memes/<%= meme.id %>">
+        <img src="<%= meme.url_source %>" alt="<%= meme.title %>" width="220">
+      </a>
+    <% end %>
   </div>
 <% end %>

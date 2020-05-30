@@ -62,7 +62,7 @@ class MemesController < ApplicationController
   end
 
   def categories
-    @meme_categ = Meme.all.group_by { |meme| meme.category.name }
+    @memes_by_categ = Meme.all.group_by { |meme| meme.category.name }
   end
 
   private
