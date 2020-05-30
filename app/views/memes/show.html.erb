@@ -29,6 +29,17 @@
     </div>
   </div>
 
+  <div class="flex justify-space-between w-100-percent max-w-440">
+    <div class="flex align-items-center">
+      <p>
+        <strong>Tags:</strong>
+        <% @meme.tags.each do |tag| %>
+          <span class="tag-green"><%= tag.name %></span>
+        <% end %>
+      </p>
+    </div>
+  </div>
+
   <div class="comments max-w-440 w-100-percent">
     <h1>Comments:</h1>
     <% if current_user %>
